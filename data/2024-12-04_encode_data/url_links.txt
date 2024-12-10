@@ -1,0 +1,6 @@
+GM23248 H3K27me3 https://www.encodeproject.org/files/ENCFF023UKO/@@download/ENCFF023UKO.bigWig
+GM23248 H3K36me3 https://www.encodeproject.org/files/ENCFF576REG/@@download/ENCFF576REG.bigWig
+GM23248 H3K4me3 https://www.encodeproject.org/files/ENCFF063GAA/@@download/ENCFF063GAA.bigWig
+GM06690 H3K27me3 https://www.encodeproject.org/files/ENCFF942ZES/@@download/ENCFF942ZES.bigWig
+GM06690	H3K36me3 https://www.encodeproject.org/files/ENCFF509MCJ/@@download/ENCFF509MCJ.bigWig
+GM06690	H3K4me3 https://www.encodeproject.org/files/ENCFF728LMD/@@download/ENCFF728LMD.bigWig
