@@ -1,7 +1,7 @@
 #!/bin/bash
-#test
 set -x -e
 cat url_links.txt | while read sample assay url
 do
-	wget ${url} .
-done
+	mkdir -p "${sample}/${assay}"
+	wget -P "${sample}/${assay}" "${url}"
+done < url_links.txt
