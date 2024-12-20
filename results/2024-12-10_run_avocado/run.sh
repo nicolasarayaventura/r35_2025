@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e -x
 
-scratch=../../scratch/2024-12-10_run_avocoda
+
+scratch=/sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda
+
 
 function transform_bigwig_files {
   mkdir -p ${scratch}/transform_bigwig_files
