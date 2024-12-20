@@ -1,13 +1,17 @@
 import os
+import sys
 import pyBigWig
 import numpy as np
 
+input_bigwig = sys.argv[1]
+output_wig = sys.argv[2]
+
 # Define the paths for the input directory and the output directory
-work_data = "/sc/arion/work/arayan01/project/r35_2025/data/2024-12-04_encode_data"
-scratch = "/sc/arion/scratch/arayan01/project/r35_2025/data/2024-12-04_encode_data/bigwig_towig"
+#work_data = "/sc/arion/work/arayan01/project/r35_2025/data/2024-12-04_encode_data"
+#scratch = "/sc/arion/scratch/arayan01/project/r35_2025/data/2024-12-04_encode_data/bigwig_towig"
 
 # Ensure the scratch directory exists
-os.makedirs(scratch, exist_ok=True)
+#os.makedirs(scratch, exist_ok=True)
 
 def bigwig_to_wig(bw_file, output_file, chrom="chr14", window_size=25):
     # Open the BigWig file
@@ -41,6 +45,9 @@ def bigwig_to_wig(bw_file, output_file, chrom="chr14", window_size=25):
     # Close the BigWig file
     bw.close()
 
+bigwig_to_wig(input_bigwig,output_wig)
+
+'''
 # Iterate over all BigWig files in the directory and subdirectories
 for root, dirs, files in os.walk(work_data):
     for file in files:
@@ -60,3 +67,6 @@ for root, dirs, files in os.walk(work_data):
             bigwig_to_wig(bw_file, output_file, chrom="chr14")
             
             print(f"Converted {bw_file} to {output_file}")
+'''
+
+
