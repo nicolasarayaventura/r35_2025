@@ -4,7 +4,7 @@ set -e -x
 
 scratch=/sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda
 data_dir="../../data/2024-12-04_encode_data"
-
+conda_env="avocado"
 
 function transform_to_wig {
   mkdir -p ${scratch}/transform_to_wig
@@ -19,7 +19,14 @@ function transform_to_wig {
 }
 
 function running_avocado {
-  python avodo_models.py
+  source activate $conda_env
+  python avodo_analysis.py
+  mkdir -p ${scratch}/avocado_analysis
+  do
+    bsub -P acc_oscarlr -q premium -n 1 -W 24:00 -o job.txt \
+        "python avocado_analysis.py \
+        ../../data/2024-12-04_encode_data/${sample}/${assay}/${fn} \
+        ${scratch}/avocado_analysis/${sample}_${assay}.wig"
 
 }
 
