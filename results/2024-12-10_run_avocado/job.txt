@@ -1,0 +1,50 @@
+Sender: LSF System <lsfadmin@lh06c24>
+Subject: Job 166441864: <python single_avo.py         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/transform_to_wig/4GM06690_H3K27me3.wig         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/4GM06690_H3K27me3_test.wig> in cluster <chimera> Exited
+
+Job <python single_avo.py         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/transform_to_wig/4GM06690_H3K27me3.wig         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/4GM06690_H3K27me3_test.wig> was submitted from host <li04e04> by user <arayan01> in cluster <chimera> at Thu Jan 16 15:51:34 2025
+Job was executed on host(s) <lh06c24>, in queue <premium>, as user <arayan01> in cluster <chimera> at Thu Jan 16 15:51:35 2025
+</hpc/users/arayan01> was used as the home directory.
+</sc/arion/work/arayan01/project/r35_2025/results/2024-12-10_run_avocado> was used as the working directory.
+Started at Thu Jan 16 15:51:35 2025
+Terminated at Thu Jan 16 15:51:40 2025
+Results reported at Thu Jan 16 15:51:40 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+python single_avo.py         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/transform_to_wig/4GM06690_H3K27me3.wig         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/4GM06690_H3K27me3_test.wig
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   2.98 sec.
+    Max Memory :                                 197 MB
+    Average Memory :                             153.20 MB
+    Total Requested Memory :                     3000.00 MB
+    Delta Memory :                               2803.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   4 sec.
+    Turnaround time :                            6 sec.
+
+The output (if any) follows:
+
+2025-01-16 15:51:35.943945: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-01-16 15:51:35.944718: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-01-16 15:51:35.948257: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-01-16 15:51:35.958281: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1737060695.975020 3089312 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1737060695.979786 3089312 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-01-16 15:51:35.997310: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/sc/arion/work/arayan01/project/r35_2025/results/2024-12-10_run_avocado/single_avo.py", line 10, in <module>
+    model = Avocado.load('/sc/arion/work/arayan01/project/r35_2025/data/2024-12-04_encode_data/avocado-chr14/')
+  File "/hpc/users/arayan01/.local/lib/python3.9/site-packages/avocado/model.py", line 1076, in load
+    with open("{}.json".format(name), "r") as infile:
+FileNotFoundError: [Errno 2] No such file or directory: '/sc/arion/work/arayan01/project/r35_2025/data/2024-12-04_encode_data/avocado-chr14/.json'
