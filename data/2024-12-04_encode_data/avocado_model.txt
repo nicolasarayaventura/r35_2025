@@ -1,0 +1,2 @@
+avocado-chr14(h5) https://noble.gs.washington.edu/proj/avocado/model/avocado-chr14.h5
+avocado-chr14(json)json	https://noble.gs.washington.edu/proj/avocado/model/avocado-chr14.json
