@@ -1,13 +1,13 @@
-Sender: LSF System <lsfadmin@lh06c04>
-Subject: Job 166442334: <python single_avo.py         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/transform_to_wig/4GM06690_H3K27me3.wig         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/4GM06690_H3K27me3_test.wig> in cluster <chimera> Exited
+Sender: LSF System <lsfadmin@lg03a05>
+Subject: Job 166493766: <python single_avo.py         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/transform_to_wig/4GM06690_H3K27me3.wig         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/4GM06690_H3K27me3_test.wig> in cluster <chimera> Exited
 
-Job <python single_avo.py         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/transform_to_wig/4GM06690_H3K27me3.wig         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/4GM06690_H3K27me3_test.wig> was submitted from host <li04e04> by user <arayan01> in cluster <chimera> at Thu Jan 16 15:55:52 2025
-Job was executed on host(s) <lh06c04>, in queue <premium>, as user <arayan01> in cluster <chimera> at Thu Jan 16 15:55:56 2025
+Job <python single_avo.py         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/transform_to_wig/4GM06690_H3K27me3.wig         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/4GM06690_H3K27me3_test.wig> was submitted from host <li04e04> by user <arayan01> in cluster <chimera> at Fri Jan 17 14:05:19 2025
+Job was executed on host(s) <lg03a05>, in queue <gpu>, as user <arayan01> in cluster <chimera> at Fri Jan 17 14:05:24 2025
 </hpc/users/arayan01> was used as the home directory.
 </sc/arion/work/arayan01/project/r35_2025/results/2024-12-10_run_avocado> was used as the working directory.
-Started at Thu Jan 16 15:55:56 2025
-Terminated at Thu Jan 16 15:56:04 2025
-Results reported at Thu Jan 16 15:56:04 2025
+Started at Fri Jan 17 14:05:24 2025
+Terminated at Fri Jan 17 14:05:43 2025
+Results reported at Fri Jan 17 14:05:43 2025
 
 Your job looked like:
 
@@ -16,36 +16,47 @@ Your job looked like:
 python single_avo.py         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/transform_to_wig/4GM06690_H3K27me3.wig         /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/4GM06690_H3K27me3_test.wig
 ------------------------------------------------------------
 
-TERM_MEMLIMIT: job killed after reaching LSF memory usage limit.
-Exited with exit code 137.
+Exited with exit code 1.
 
 Resource usage summary:
 
-    CPU time :                                   4.74 sec.
-    Max Memory :                                 3000 MB
-    Average Memory :                             1528.57 MB
+    CPU time :                                   12.44 sec.
+    Max Memory :                                 1558 MB
+    Average Memory :                             530.27 MB
     Total Requested Memory :                     3000.00 MB
-    Delta Memory :                               0.00 MB
+    Delta Memory :                               1442.00 MB
     Max Swap :                                   -
     Max Processes :                              3
-    Max Threads :                                7
-    Run time :                                   8 sec.
-    Turnaround time :                            12 sec.
+    Max Threads :                                8
+    Run time :                                   19 sec.
+    Turnaround time :                            24 sec.
 
 The output (if any) follows:
 
-2025-01-16 15:55:56.565920: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2025-01-16 15:55:56.566710: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-01-16 15:55:56.570561: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-01-16 15:55:56.580653: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1737060956.597234 3952712 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1737060956.601973 3952712 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2025-01-16 15:55:56.619831: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-/hpc/users/arayan01/.local/lib/python3.9/site-packages/keras/src/layers/core/embedding.py:90: UserWarning: Argument `input_length` is deprecated. Just remove it.
-  warnings.warn(
-2025-01-16 15:56:00.828599: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
-/hpc/users/arayan01/.local/lib/python3.9/site-packages/keras/src/layers/core/embedding.py:93: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
-  super().__init__(**kwargs)
-/local/JOBS/1737060952.166442334: line 8: 3952712 Killed                  python single_avo.py /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/transform_to_wig/4GM06690_H3K27me3.wig /sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/4GM06690_H3K27me3_test.wig
+Using TensorFlow backend.
+/sc/arion/work/arayan01/test-env/envs/avocado_v2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:523: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/sc/arion/work/arayan01/test-env/envs/avocado_v2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:524: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/sc/arion/work/arayan01/test-env/envs/avocado_v2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/sc/arion/work/arayan01/test-env/envs/avocado_v2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/sc/arion/work/arayan01/test-env/envs/avocado_v2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/sc/arion/work/arayan01/test-env/envs/avocado_v2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:532: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+WARNING:tensorflow:From /sc/arion/work/arayan01/test-env/envs/avocado_v2/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:1205: calling reduce_prod (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From /sc/arion/work/arayan01/test-env/envs/avocado_v2/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:1290: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+2025-01-17 14:05:40.396023: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+2025-01-17 14:05:40.398681: I tensorflow/core/common_runtime/process_util.cc:69] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+Traceback (most recent call last):
+  File "single_avo.py", line 38, in <module>
+    model.fit_celltypes(data, n_epochs=5)
+  File "/sc/arion/work/arayan01/test-env/envs/avocado_v2/lib/python3.6/site-packages/avocado/model.py", line 558, in fit_celltypes
+    self.n_genomic_positions))
+ValueError: The track corresponding to GM06690 H3K36me3 is of size 2 while the model encodes 4293981 genomic positions
