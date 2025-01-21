@@ -3,17 +3,17 @@ from avocado import Avocado
 
 # Function to read WIG file
 def read_wig_file(filename):
-    positions = []
     values = []
     with open(filename, 'r') as f:
         for line in f:
             if line.startswith('track') or line.startswith('browser'):
                 continue
-            parts = line.strip().split()
-            if len(parts) == 2:
-                positions.append(parts[0])
-                values.append(parts[1])
-    return positions, values
+            # line? "{chrom}\t{i*window_size}\t{i*window_size + window_size}\t{avg_value}\n"
+            parts = line.rstrip('\n') # "{chrom}\t{i*window_size}\t{i*window_size + window_size}\t{avg_value}"
+            parts = line.split('\t') # string to list, where every element is sandwiched between a \t
+            value = float(parts[3])
+            values.append(value)
+    return values
 
 # Set paths
 scratch = "/sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda"
@@ -27,8 +27,8 @@ data = {}
 # Load data for each assay
 for assay in assays:
     wig_filename = "%s/transform_to_wig/%s_%s.wig" % (scratch, sample_name, assay)  # .wig files instead of .npy
-    positions, values = read_wig_file(wig_filename)  # Read the .wig file
-    data[(sample_name, assay)] = (positions, values)  # Store positions and values
+    values = read_wig_file(wig_filename)  # Read the .wig file
+    data[(sample_name, assay)] = values  # Store positions and values
 
 # Load the Avocado model
 model = Avocado.load(model_path)
