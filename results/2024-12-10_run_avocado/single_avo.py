@@ -1,5 +1,6 @@
 import numpy as np
-import tensorflow as keras
+import os
+import sys
 from avocado import Avocado
 
 # Function to read WIG file
@@ -8,16 +9,25 @@ def read_wig_file(filename):
     with open(filename, 'r') as f:
         for line in f:
             if line.startswith('track') or line.startswith('browser'):
-                continue
-            # line? "{chrom}\t{i*window_size}\t{i*window_size + window_size}\t{avg_value}\n"
-            parts = line.rstrip('\n') # "{chrom}\t{i*window_size}\t{i*window_size + window_size}\t{avg_value}"
-            parts = line.split('\t') # string to list, where every element is sandwiched between a \t
+                continue            
+            parts = line.rstrip('\n').split('\t')
             value = float(parts[3])
             values.append(value)
     return values
 
+# Function to write the predicted WIG file
+def write_wig_file(prediction, filename, chrom="chr14", window_size=25):
+    with open(filename, 'w') as f:
+        # Add track line
+        f.write("track type=wiggle_0\n")
+        # Write the predicted values with positions
+        for i, value in enumerate(prediction):
+            start = i * window_size
+            end = start + window_size
+            f.write(f"{chrom}\t{start}\t{end}\t{value}\n")
+
 # Set paths
-scratch = "/sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda"
+scratch =  sys.argv[1]
 sample_name = "GM06690"
 assays = ["H3K36me3", "H3K27me3"]
 model_path = "/sc/arion/work/arayan01/project/r35_2025/data/2024-12-04_encode_data/avocado-chr14/avocado-chr14"
@@ -40,6 +50,12 @@ model.fit_celltypes(data, n_epochs=5)
 # Make a prediction for the H3K4me3 assay
 track = model.predict(sample_name, "H3K4me3")
 
+# Define output file path for the prediction
+output_file = sys.argv[2]
+
+# Write the predicted values to a WIG file
+write_wig_file(track, output_file)
+
 # Print the prediction results
 print(f"Prediction for {sample_name} H3K4me3: {track}")
-
+print(f"Predicted WIG file saved to: {output_file}")
