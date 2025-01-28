@@ -29,9 +29,23 @@ function test {
   output_file="${scratch}/test_avo/4${sample}_${assay}_test.wig"
 
   bsub -P acc_oscarlr -q premium -n 1 -W 24:00 -R "rusage[mem=8000]" -o job.txt \
-    "python single_avo.py \
+    "python single_avo_wig.py \
         ${input_file} \
         ${output_file}"
+}
+
+function fix_file {
+    fn=/sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/GM06690_H3K4me3_predicted.wig
+    fix_fn=/sc/arion/scratch/arayan01/projects/r35_2025/results/2024-12-10_run_avocoda/test_avo/GM06690_H3K4me3_predicted_edit.wig
+    echo "track type=wiggle_0" > ${fix_fn}
+    cat ${fn} | cut -f4 | grep -v wiggle | nl | while read i val
+    do
+	chr=chr14
+	start=`echo ${i} | awk '{ print ($1-1)*25}'`
+	end=`echo ${start} | awk '{ print $1 + 25 }'`
+	echo -e "${chr}\t${start}\t${end}\t${val}"
+    done >> ${fix_fn}
+    ls ${fix_fn}
 }
 
 # Running avocado analysis
@@ -101,7 +115,8 @@ function test_multi_plot {
 }
 
 #transform_to_wig
-test_multi_plot
+#test_multi_plot
 #test_plot
 #test
 #run_avo
+fix_file

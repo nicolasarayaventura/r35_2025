@@ -2,7 +2,7 @@ import os
 import sys
 import pyBigWig
 import numpy as np
-#averaged values displayed only
+
 input_bigwig = sys.argv[1]
 output_wig = sys.argv[2]
 
@@ -29,8 +29,9 @@ def bigwig_to_wig(bw_file, output_file, chrom="chr14", window_size=25):
             ]
             
             # Write the averaged values to the Wig file
-            for avg_value in averaged_values:
-                 wig.write(f"{avg_value}\n")    
+            for i, avg_value in enumerate(averaged_values):
+                wig.write(f"{chrom}\t{i*window_size}\t{i*window_size + window_size}\t{avg_value}\n")
+                
         else:
             print(f"Chromosome {chrom} not found in the BigWig file.")
     
@@ -38,6 +39,5 @@ def bigwig_to_wig(bw_file, output_file, chrom="chr14", window_size=25):
     bw.close()
 
 bigwig_to_wig(input_bigwig,output_wig)
-
 
 
